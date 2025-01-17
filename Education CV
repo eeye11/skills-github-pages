@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Page</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+            color: #ffffff;
+            background: linear-gradient(145deg, #1b5e20 0%, #1a1a1a 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            color: #ffffff;
+            text-decoration: none;
+            background-color: rgba(255,255,255,0.1);
+            border: 2px solid #ffffff;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .animation-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            background-color: #2e7d32;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .line {
+            height: 4px;
+            background-color: #2e7d32;
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            transform-origin: left center;
+            width: 0;
+        }
+
+        @keyframes extendLine {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100vw;
+            }
+        }
+
+        .animate-line {
+            animation: extendLine 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Education</h1>
+        <a href="#" class="nav-link" onclick="handleClick(event)">View My Education Profile</a>
+    </div>
+
+    <div class="animation-container">
+        <div class="circle"></div>
+        <div class="line"></div>
+    </div>
+
+    <script>
+        function handleClick(event) {
+            event.preventDefault();
+            
+            // Show the animation container
+            const animationContainer = document.querySelector('.animation-container');
+            animationContainer.style.display = 'block';
+            
+            // Start the line animation
+            const line = document.querySelector('.line');
+            line.classList.add('animate-line');
+            
+            // Redirect after animation
+            setTimeout(() => {
+                window.location.href = 'https://flowcv.me/eeyeigoche/education';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
+
+Version 4 of 5
